@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+import pkg from './package.json'
+
+const nextConfig = {
+  basePath: `/${pkg.name}`,
+  output: "export",
+  reactStrictMode: true,
+};
 
 export default nextConfig;
