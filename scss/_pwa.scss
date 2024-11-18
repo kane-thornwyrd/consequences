@@ -1,0 +1,79 @@
+/*
+  Reserved for PWA-specfic CSS entries, such as needed for window-controls-overlay (manifest) 
+*/
+
+// #hamburger {
+//   position: fixed;
+//   left: env(titlebar-area-x, 0);
+//   top: env(titlebar-area-y, 0);
+//   height: env(titlebar-area-height, 50px);
+//   width: env(titlebar-area-width, 100%);
+//   -webkit-app-region: drag;
+// }
+
+
+#pwa-install {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  display: none;
+  width: 48px;
+  height: 48px;
+  padding: .8rem .6rem .1rem .4rem;
+  --icon-fill: white;
+  background-color: var(--color-button-face-primary);
+  box-shadow: var(--box-shadow);
+  border-radius: 100%;
+  z-index: 7;
+  transition: none;
+  animation: slide-from-right .3s ease-out;
+
+  &.show {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #pwa-install {
+    bottom: 65px;
+  }
+}
+
+#sw-notification {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  text-align: center;
+
+  &.show {
+    display: block;
+    animation: fade-in 1s ease-out;
+  }
+
+  >a {
+    display: inline-block;
+    padding: .2rem .5rem;
+    background-color: var(--color-surface-400);
+    box-shadow: var(--box-shadow);
+    color: var(--color-primary-000);
+    border-radius: .5rem;
+
+    >span {
+      display: inline-block;
+      vertical-align: super;
+      line-height: 32px;
+    }
+
+    >svg-icon {
+      --icon-fill: var(--color-primary-000);
+      display: inline-block;
+    }
+  }
+
+
+  //display: none;
+}
+
